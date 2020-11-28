@@ -35,7 +35,18 @@ function App() {
 
   if(loading){
     return (
-      <main><Loading /></main>
+      <main><Loading />
+      </main>
+    )
+  };
+
+  if(tours.length === 0) {
+    return(
+      <main>
+        <div className="title"><h3>
+          no tours left</h3>
+          <button onClick={fetchTours}>refresh</button></div>
+      </main>
     )
   }
   return <main>
